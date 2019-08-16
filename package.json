@@ -1,0 +1,16 @@
+{
+  "name": "rs_es6_desafio01",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/enilton/rs_es6_desafio01.git",
+  "author": "Enilton Rastele <eniltjr1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  },
+  "scripts": {
+    "dev": "babel ./main.js -o bundle.js -w"
+  }
+}
