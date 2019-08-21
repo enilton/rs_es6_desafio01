@@ -1,17 +1,20 @@
 {
   "name": "rs_es6_desafio01",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "repository": "https://github.com/enilton/rs_es6_desafio01.git",
   "author": "Enilton Rastele <eniltjr1@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/preset-env": "^7.5.5"
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   },
   "scripts": {
-    "dev": "babel ./main.js -o bundle.js -w"
+    "dev": "webpack-dev-server --mode=development"
   }
 }

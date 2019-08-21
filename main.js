@@ -1,4 +1,0 @@
-class Teste {
-  metodo() { }
-  outro() { }
-}
