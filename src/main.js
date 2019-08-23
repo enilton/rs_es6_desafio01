@@ -3,7 +3,8 @@
 *
 Exercícios: Módulo 01
 
-1º exercícioPara testar seus conhecimentos com classes, crie uma classe com nome "Admin", essa classe deve
+1º exercício
+Para testar seus conhecimentos com classes, crie uma classe com nome "Admin", essa classe deve
 extender uma segunda classe chamada "Usuario".A classe usuário deve receber dois parâmetros no método 
 construtor, e-mail e senha, e anotá-losem propriedades da classe. A classe "Admin" por sua vez não recebe 
 parâmetros mas deverepassar os parâmetros de e-mail e senha à classe pai e marcar uma propriedade "admin" 
@@ -37,7 +38,8 @@ class Admin extends Usuario {
     console.log(Adm1.isAdmin()) // true
 
 /*
-    2º exercício
+*
+2º exercício
     A partir do seguinte vetor e utilizando os métodos de array (map, 
         reduce, filter e find):
     */    
@@ -66,10 +68,114 @@ console.log(idades);
            na Rocketseat e com mais de 18anos: 
            [{ nome: 'Diego', idade: 23, empresa: 'Rocketseat' }]
 */           
+
+let rocketseaters = usuarios.filter(usuario => {
+    return usuario.empresa === 'Rocketseat';
+});
+
+console.log(rocketseaters);           
            
            
-           
-           
-/*           2.3 Utilizando o findCrie uma variável que procura por um usuário que trabalhe na empresa Google: undefined2.4 Unindo operações
-Multiplique a idade de todos usuários por dois e depois realize um filtro nos usuários que possuemno máximo 50 anos:// Resultado:[  { nome: 'Diego', idade: 46, empresa: 'Rocketseat' },  { nome: 'Gabriel', idade: 30, empresa: 'Rocketseat' },]
+/*          2.3 Utilizando o find:
+            Crie uma variável que procura por um usuário que trabalhe na empresa Google: undefined
+*/            
+let googlers = usuarios.find(usuario => {
+    return usuario.empresa === 'Google';
+})            
+
+console.log(googlers);            
+            
+/*            2.4 Unindo operações
+            Multiplique a idade de todos usuários por dois e depois realize 
+            um filtro nos usuários que possue mno máximo 50 anos:
+            // Resultado:[  
+                { nome: 'Diego', idade: 46, empresa: 'Rocketseat' },  
+                { nome: 'Gabriel', idade: 30, empresa: 'Rocketseat' },]
 */
+usuarios.map(usuario => {
+    usuario.idade = usuario.idade * 2;
+})
+
+console.log(usuarios);
+
+let resultado = usuarios.filter(usuario => {
+    return usuario.idade < 50;
+})
+
+console.log(resultado);
+
+
+/* 3º exercício
+Converta as funções nos seguintes trechos de código em Arrow Functions:// 
+
+        3.1 const arr = [1, 2, 3, 4, 5];
+        arr.map(function(item) {  
+            return item + 10;
+        });
+*/
+const arr = [1,2,3,4,5];
+arr.map(item => item + 10);
+console.log(arr);
+
+        // 3.2// Dica: Utilize uma constante pra function
+        
+/*const usuario = { nome: 'Diego', idade: 23 };
+
+usuario.map(item =>
+    console.log(item.idade)
+);*/
+
+        //3 .3 
+            /*function mostraUsuario(nome = 'Diego', idade = 18) { 
+                return { nome, idade };
+            }
+
+            mostraUsuario(nome, idade);
+            mostraUsuario(nome);
+            */
+
+//const nome = "Diego";
+//const idade = 23;
+
+        // 3.4
+        /* const promise = function() {  
+            return new Promise(function(resolve, reject) {
+                return resolve();
+            })
+        }
+        */
+
+const promisse = () => { 
+    return new Promisse((resolve, reject) => { return resolve });
+};
+
+/*
+    4º exercício
+    4.1 Desestruturação simples
+    A partir do seguinte objeto:
+    */
+    const empresa = {  
+        nome: 'Rocketseat', 
+        endereco: {    
+            cidade: 'Rio do Sul',    
+            estado: 'SC',  
+        }
+    };
+    /*
+    Utilize a desestruturação para transformar as propriedades nome, 
+    cidade e estado em variáveis, nofim deve ser possível fazer o seguinte:
+    
+    console.log(nome); // Rocketseat
+    console.log(cidade); // Rio do Sul
+    console.log(estado); // SC
+    */
+   
+    const { nome, endereco } = empresa;
+
+    const { cidade, estado } = endereco;
+
+    console.log(nome); // Rocketseat
+    console.log(cidade); // Rio do Sul
+    console.log(estado); // SC
+
+    
